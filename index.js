@@ -41,6 +41,16 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+burger.discountPrice = function (whom) {
+  if (whom === 'teacher' || whom === 'student') {
+    return this.price * 0.75;
+  } else if (whom === 'public') {
+    return this.price * 0.9;
+  } else {
+    return "Please provide the meal's recipient category (student, teacher, public).";
+  }
+};
+burger.discountPrice("teacher");
 
 
 ///////////////Reviews (MVP)///////////////////
