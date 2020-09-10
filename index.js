@@ -20,9 +20,9 @@ const breakfastBurrito = {
 
 function createMenuItem(name, cost, category) {
   return {
-    name: name,
+    name,
     price: cost,
-    category: category,
+    category,
   };
 }
 
@@ -95,15 +95,28 @@ const reviews = [{
     rating: 3.5,
     feedback: ""
   },
-]
+];
 
 /* Task 3: Console.log just Julius' feedback */
 
+function feedback(specific) {
+  return specific.name === 'Julius'
+}
+const feedbackJulius = reviews.filter(feedback);
+console.log(feedbackJulius);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
+reviews.push({
+  name: "April",
+  rating: 1,
+  feedback: "I won't be back"
+});
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
+
+reynaIndex = reviews.findIndex((obj => obj.name == "Reyna")); //find object's index
+reviews[reynaIndex].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
